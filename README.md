@@ -1,0 +1,1 @@
+On-line job search system with the possibility of selecting vacancies according to the specified search parameters in accordance with the education, experience and skills of the searcher, working conditions and additional conditions.
