@@ -19,7 +19,7 @@ class Language {
       Language(
         id: 2,
         flag: '🇺🇦',
-        name: 'Ukrainian',
+        name: 'Українська',
         languageCode: 'uk',
         countryCode: 'UA',
       ),

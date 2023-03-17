@@ -25,16 +25,14 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           title: 'YoJob',
           localizationsDelegates: const [
-            S.delegate,
+            AppLocalizations.delegate,
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
           locale: provider.locale,
-          supportedLocales: S.delegate.supportedLocales,
-          theme: ThemeData(
-            primarySwatch: Colors.blue,
-          ),
+          supportedLocales: AppLocalizations.delegate.supportedLocales,
+          theme: ThemeData(primarySwatch: Colors.orange),
           home: const SignInScreen(),
         );
       },
