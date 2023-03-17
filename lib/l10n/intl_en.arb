@@ -1,4 +1,9 @@
 {
   "jobSeeker": "Job seeker",
-  "recruiter": "Recruiter"
+  "recruiter": "Recruiter",
+  "email": "E-mail",
+  "password": "Password",
+  "signIn": "Sign in",
+  "signUp": "Sign up",
+  "signUpAs": "Sign up as a "
 }
