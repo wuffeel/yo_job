@@ -36,8 +36,8 @@ class _CredentialsFieldState extends State<CredentialsField> {
           borderSide: BorderSide(color: ColorPalette().ff8800),
         ),
         hintText: widget.isPassword
-            ? AppLocalizations.of(context).password
-            : AppLocalizations.of(context).email,
+            ? S.of(context).password
+            : S.of(context).email,
         hintStyle: GoogleFonts.montserrat(
           fontSize: 16,
         ),

@@ -22,12 +22,28 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "add": MessageLookupByLibrary.simpleMessage("Add"),
+        "addNew": MessageLookupByLibrary.simpleMessage("Add new"),
+        "birthDate": MessageLookupByLibrary.simpleMessage("Birth date"),
+        "canBeEdited":
+            MessageLookupByLibrary.simpleMessage("can be edited later"),
         "email": MessageLookupByLibrary.simpleMessage("E-mail"),
+        "firstName": MessageLookupByLibrary.simpleMessage("First name"),
+        "industryPreferences":
+            MessageLookupByLibrary.simpleMessage("Industry preferences"),
         "jobSeeker": MessageLookupByLibrary.simpleMessage("Job seeker"),
+        "lastName": MessageLookupByLibrary.simpleMessage("Last name"),
+        "optional": MessageLookupByLibrary.simpleMessage("Optional"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "patronymic": MessageLookupByLibrary.simpleMessage("Patronymic"),
         "recruiter": MessageLookupByLibrary.simpleMessage("Recruiter"),
+        "save": MessageLookupByLibrary.simpleMessage("Save"),
         "signIn": MessageLookupByLibrary.simpleMessage("Sign in"),
         "signUp": MessageLookupByLibrary.simpleMessage("Sign up"),
-        "signUpAs": MessageLookupByLibrary.simpleMessage("Sign up as a ")
+        "signUpAs": MessageLookupByLibrary.simpleMessage("Sign up as a "),
+        "tellUs":
+            MessageLookupByLibrary.simpleMessage("Tell us about yourself "),
+        "typeHere": MessageLookupByLibrary.simpleMessage("Type here..."),
+        "welcome": MessageLookupByLibrary.simpleMessage("Welcome to YoJob!")
       };
 }

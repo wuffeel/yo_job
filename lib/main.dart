@@ -4,6 +4,7 @@ import 'package:yo_job/auth/screens/sign_in_screen.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:yo_job/utils/locale_provider.dart';
+
 import 'generated/l10n.dart';
 
 void main() async {
@@ -25,13 +26,13 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           title: 'YoJob',
           localizationsDelegates: const [
-            AppLocalizations.delegate,
+            S.delegate,
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
           locale: provider.locale,
-          supportedLocales: AppLocalizations.delegate.supportedLocales,
+          supportedLocales: S.delegate.supportedLocales,
           theme: ThemeData(primarySwatch: Colors.orange),
           home: const SignInScreen(),
         );

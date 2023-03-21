@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:yo_job/utils/gradient_setting.dart';
+import 'package:yo_job/common_widgets/gradient_big_button.dart';
+import 'package:yo_job/styles/common_text_styles.dart';
 
 import '../../generated/l10n.dart';
 
@@ -13,18 +13,7 @@ class AuthButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        gradient: GradientSetting().gradient,
-        boxShadow: const [
-          BoxShadow(
-            color: Colors.grey,
-            offset: Offset(0.0, 4),
-            blurRadius: 4,
-          ),
-        ],
-        borderRadius: BorderRadius.circular(15),
-      ),
+    return GradientBigButton(
       child: InkWell(
         onTap: onPressed,
         child: Padding(
@@ -33,9 +22,8 @@ class AuthButton extends StatelessWidget {
             vertical: 16.0,
           ),
           child: Text(
-            isSignIn ? AppLocalizations.of(context).signIn : AppLocalizations.of(context).signUp,
-            style: GoogleFonts.montserrat(
-                fontSize: 24, fontWeight: FontWeight.w700, color: Colors.white),
+            isSignIn ? S.of(context).signIn : S.of(context).signUp,
+            style: CommonTextStyles().bigButtonText,
           ),
         ),
       ),

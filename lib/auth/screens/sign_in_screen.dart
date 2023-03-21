@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:yo_job/auth/screens/sign_up_screen.dart';
+import 'package:yo_job/auth/screens/welcome_screen.dart';
 import 'package:yo_job/auth/widgets/auth_app_bar.dart';
 import 'package:yo_job/auth/widgets/auth_button.dart';
 import 'package:yo_job/auth/widgets/credentials_field.dart';
@@ -40,7 +41,7 @@ class _SignInScreenState extends State<SignInScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 UserTypeWidget(
-                  title: AppLocalizations.of(context).jobSeeker,
+                  title: S.of(context).jobSeeker,
                   onPressed: () {
                     changeUserType(0);
                   },
@@ -48,7 +49,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   currentIndex: _selectedUserIndex == 0 ? true : false,
                 ),
                 UserTypeWidget(
-                  title: AppLocalizations.of(context).recruiter,
+                  title: S.of(context).recruiter,
                   onPressed: () {
                     changeUserType(1);
                   },
@@ -76,7 +77,17 @@ class _SignInScreenState extends State<SignInScreen> {
                 ],
               ),
             ),
-            AuthButton(isSignIn: true, onPressed: () {}),
+            AuthButton(
+              isSignIn: true,
+              // TODO: provide database logic
+              onPressed: () {
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                    builder: (context) => WelcomeScreen(),
+                  ),
+                );
+              },
+            ),
             const SizedBox(
               height: 50,
             ),

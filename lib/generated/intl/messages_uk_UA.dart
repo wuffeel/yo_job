@@ -22,12 +22,28 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "add": MessageLookupByLibrary.simpleMessage("Додати"),
+        "addNew": MessageLookupByLibrary.simpleMessage("Додати"),
+        "birthDate": MessageLookupByLibrary.simpleMessage("Дата народження"),
+        "canBeEdited":
+            MessageLookupByLibrary.simpleMessage("може бути змінено потім"),
         "email": MessageLookupByLibrary.simpleMessage("Ел. пошта"),
+        "firstName": MessageLookupByLibrary.simpleMessage("Ім\'я"),
+        "industryPreferences":
+            MessageLookupByLibrary.simpleMessage("Галузеві вподобання"),
         "jobSeeker": MessageLookupByLibrary.simpleMessage("Пошукач"),
+        "lastName": MessageLookupByLibrary.simpleMessage("Прізвище"),
+        "optional": MessageLookupByLibrary.simpleMessage("необов\'язково"),
         "password": MessageLookupByLibrary.simpleMessage("Пароль"),
+        "patronymic": MessageLookupByLibrary.simpleMessage("По-батькові"),
         "recruiter": MessageLookupByLibrary.simpleMessage("Роботодавець"),
+        "save": MessageLookupByLibrary.simpleMessage("Зберегти"),
         "signIn": MessageLookupByLibrary.simpleMessage("Увійти"),
         "signUp": MessageLookupByLibrary.simpleMessage("Реєстрація"),
-        "signUpAs": MessageLookupByLibrary.simpleMessage("Зареєструватись як ")
+        "signUpAs": MessageLookupByLibrary.simpleMessage("Зареєструватись як "),
+        "tellUs": MessageLookupByLibrary.simpleMessage("Розкажіть про себе"),
+        "typeHere": MessageLookupByLibrary.simpleMessage("Вводити тут..."),
+        "welcome":
+            MessageLookupByLibrary.simpleMessage("Ласкаво просимо у YoJob!")
       };
 }
