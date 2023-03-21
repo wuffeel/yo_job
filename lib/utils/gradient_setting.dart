@@ -8,7 +8,9 @@ class GradientSetting {
         end: Alignment.centerRight,
       );
 
-  ShaderMask orangeToYellow({required Widget child}) {
+
+  /// Text should be white to work properly
+  ShaderMask textOrangeToYellow({required Widget child}) {
     return ShaderMask(
       shaderCallback: (Rect bounds) {
         return gradient.createShader(Offset.zero & bounds.size);

@@ -12,12 +12,12 @@ import 'intl/messages_all.dart';
 // ignore_for_file: join_return_with_assignment, prefer_final_in_for_each
 // ignore_for_file: avoid_redundant_argument_values, avoid_escaping_inner_quotes
 
-class AppLocalizations {
-  AppLocalizations();
+class S {
+  S();
 
-  static AppLocalizations? _current;
+  static S? _current;
 
-  static AppLocalizations get current {
+  static S get current {
     assert(_current != null,
         'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
     return _current!;
@@ -25,46 +25,66 @@ class AppLocalizations {
 
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
-  static Future<AppLocalizations> load(Locale locale) {
+  static Future<S> load(Locale locale) {
     final name = (locale.countryCode?.isEmpty ?? false)
         ? locale.languageCode
         : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
-      final instance = AppLocalizations();
-      AppLocalizations._current = instance;
+      final instance = S();
+      S._current = instance;
 
       return instance;
     });
   }
 
-  static AppLocalizations of(BuildContext context) {
-    final instance = AppLocalizations.maybeOf(context);
+  static S of(BuildContext context) {
+    final instance = S.maybeOf(context);
     assert(instance != null,
         'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?');
     return instance!;
   }
 
-  static AppLocalizations? maybeOf(BuildContext context) {
-    return Localizations.of<AppLocalizations>(context, AppLocalizations);
+  static S? maybeOf(BuildContext context) {
+    return Localizations.of<S>(context, S);
   }
 
-  /// `Job seeker`
-  String get jobSeeker {
+  /// `Add`
+  String get add {
     return Intl.message(
-      'Job seeker',
-      name: 'jobSeeker',
+      'Add',
+      name: 'add',
       desc: '',
       args: [],
     );
   }
 
-  /// `Recruiter`
-  String get recruiter {
+  /// `Add new`
+  String get addNew {
     return Intl.message(
-      'Recruiter',
-      name: 'recruiter',
+      'Add new',
+      name: 'addNew',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Birth date`
+  String get birthDate {
+    return Intl.message(
+      'Birth date',
+      name: 'birthDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `can be edited later`
+  String get canBeEdited {
+    return Intl.message(
+      'can be edited later',
+      name: 'canBeEdited',
       desc: '',
       args: [],
     );
@@ -80,11 +100,91 @@ class AppLocalizations {
     );
   }
 
+  /// `First name`
+  String get firstName {
+    return Intl.message(
+      'First name',
+      name: 'firstName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Industry preferences`
+  String get industryPreferences {
+    return Intl.message(
+      'Industry preferences',
+      name: 'industryPreferences',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Job seeker`
+  String get jobSeeker {
+    return Intl.message(
+      'Job seeker',
+      name: 'jobSeeker',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Last name`
+  String get lastName {
+    return Intl.message(
+      'Last name',
+      name: 'lastName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Optional`
+  String get optional {
+    return Intl.message(
+      'Optional',
+      name: 'optional',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Password`
   String get password {
     return Intl.message(
       'Password',
       name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Patronymic`
+  String get patronymic {
+    return Intl.message(
+      'Patronymic',
+      name: 'patronymic',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recruiter`
+  String get recruiter {
+    return Intl.message(
+      'Recruiter',
+      name: 'recruiter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save`
+  String get save {
+    return Intl.message(
+      'Save',
+      name: 'save',
       desc: '',
       args: [],
     );
@@ -119,9 +219,39 @@ class AppLocalizations {
       args: [],
     );
   }
+
+  /// `Tell us about yourself `
+  String get tellUs {
+    return Intl.message(
+      'Tell us about yourself ',
+      name: 'tellUs',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Type here...`
+  String get typeHere {
+    return Intl.message(
+      'Type here...',
+      name: 'typeHere',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome to YoJob!`
+  String get welcome {
+    return Intl.message(
+      'Welcome to YoJob!',
+      name: 'welcome',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
-class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {
+class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   const AppLocalizationDelegate();
 
   List<Locale> get supportedLocales {
@@ -134,7 +264,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {
   @override
   bool isSupported(Locale locale) => _isSupported(locale);
   @override
-  Future<AppLocalizations> load(Locale locale) => AppLocalizations.load(locale);
+  Future<S> load(Locale locale) => S.load(locale);
   @override
   bool shouldReload(AppLocalizationDelegate old) => false;
 

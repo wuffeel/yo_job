@@ -1,9 +1,22 @@
 {
-  "jobSeeker": "Пошукач",
-  "recruiter": "Роботодавець",
+  "add": "Додати",
+  "addNew": "Додати",
+  "birthDate": "Дата народження",
+  "canBeEdited": "може бути змінено потім",
   "email": "Ел. пошта",
+  "firstName": "Ім'я",
+  "industryPreferences": "Галузеві вподобання",
+  "jobSeeker": "Пошукач",
+  "lastName": "Прізвище",
+  "optional": "необов'язково",
   "password": "Пароль",
+  "patronymic": "По-батькові",
+  "recruiter": "Роботодавець",
+  "save": "Зберегти",
   "signIn": "Увійти",
   "signUp": "Реєстрація",
-  "signUpAs": "Зареєструватись як "
+  "signUpAs": "Зареєструватись як ",
+  "tellUs": "Розкажіть про себе",
+  "typeHere": "Вводити тут...",
+  "welcome": "Ласкаво просимо у YoJob!"
 }

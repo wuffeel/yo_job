@@ -8,7 +8,7 @@ class YoJobLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GradientSetting().orangeToYellow(
+    return GradientSetting().textOrangeToYellow(
       child: Text(
         'YoJob',
         style: GoogleFonts.montserrat(

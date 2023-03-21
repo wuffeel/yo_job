@@ -53,7 +53,7 @@ class SignUpWidget extends StatelessWidget {
         TextButton(
           onPressed: onSignUpPressed,
           child: Text(
-            AppLocalizations.of(context).signUp,
+            S.of(context).signUp,
             style: GoogleFonts.montserrat(
               fontSize: 16,
               fontWeight: FontWeight.w700,

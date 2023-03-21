@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:yo_job/auth/screens/welcome_screen.dart';
 import 'package:yo_job/auth/widgets/auth_app_bar.dart';
 import 'package:yo_job/auth/widgets/auth_button.dart';
 import 'package:yo_job/auth/widgets/logo_widget.dart';
@@ -8,16 +9,20 @@ import 'package:yo_job/styles/color_palette.dart';
 
 import '../widgets/credentials_field.dart';
 
-class SignUpScreen extends StatelessWidget {
+class SignUpScreen extends StatefulWidget {
   final int selectedUser;
 
   const SignUpScreen({Key? key, required this.selectedUser}) : super(key: key);
 
   @override
+  State<SignUpScreen> createState() => _SignUpScreenState();
+}
+
+class _SignUpScreenState extends State<SignUpScreen> {
+  @override
   Widget build(BuildContext context) {
-    final String userType = selectedUser == 0
-        ? AppLocalizations.of(context).jobSeeker
-        : AppLocalizations.of(context).recruiter;
+    final String userType =
+        widget.selectedUser == 0 ? S.of(context).jobSeeker : S.of(context).recruiter;
     return Scaffold(
       appBar: const AuthAppBar(),
       body: SingleChildScrollView(
@@ -33,7 +38,7 @@ class SignUpScreen extends StatelessWidget {
                 textAlign: TextAlign.center,
                 maxLines: 2,
                 text: TextSpan(
-                  text: AppLocalizations.of(context).signUpAs,
+                  text: S.of(context).signUpAs,
                   children: <TextSpan>[
                     TextSpan(
                       text: userType.toLowerCase(),
@@ -79,7 +84,14 @@ class SignUpScreen extends StatelessWidget {
             ),
             AuthButton(
               isSignIn: false,
-              onPressed: () {},
+              // TODO: provide database logic
+              onPressed: () {
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                    builder: (context) => WelcomeScreen(),
+                  ),
+                );
+              },
             )
           ],
         ),
