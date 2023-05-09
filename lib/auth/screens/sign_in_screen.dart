@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:yo_job/auth/screens/sign_up_screen.dart';
 import 'package:yo_job/auth/screens/welcome_screen.dart';
+import 'package:yo_job/auth/state/auth_notifier.dart';
 import 'package:yo_job/auth/widgets/auth_app_bar.dart';
 import 'package:yo_job/auth/widgets/auth_button.dart';
 import 'package:yo_job/auth/widgets/credentials_field.dart';
@@ -23,6 +25,21 @@ class _SignInScreenState extends State<SignInScreen> {
   void changeUserType(int index) {
     setState(() {
       _selectedUserIndex = index;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    final authNotifier = context.read<AuthNotifier>();
+    authNotifier.addListener(() {
+      if(authNotifier.currentUser != null){
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(
+            builder: (context) => const WelcomeScreen(),
+          ),
+        );
+      }
     });
   }
 
@@ -83,7 +100,7 @@ class _SignInScreenState extends State<SignInScreen> {
               onPressed: () {
                 Navigator.of(context).pushReplacement(
                   MaterialPageRoute(
-                    builder: (context) => WelcomeScreen(),
+                    builder: (context) => const WelcomeScreen(),
                   ),
                 );
               },
@@ -92,7 +109,7 @@ class _SignInScreenState extends State<SignInScreen> {
               height: 50,
             ),
             SignUpWidget(
-              onGooglePressed: () {},
+              onGooglePressed: () => context.read<AuthNotifier>().googleSignIn(),
               onSignUpPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
