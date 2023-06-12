@@ -22,6 +22,10 @@ UserModel _$UserModelFromJson(Map<String, dynamic> json) {
 mixin _$UserModel {
   String get id => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
+  String? get firstName => throw _privateConstructorUsedError;
+  String? get lastName => throw _privateConstructorUsedError;
+  String? get patronymic => throw _privateConstructorUsedError;
+  DateTime? get birthDate => throw _privateConstructorUsedError;
   String? get assetUrl => throw _privateConstructorUsedError;
   String? get workModelId => throw _privateConstructorUsedError;
   bool? get isRecruiter => throw _privateConstructorUsedError;
@@ -40,6 +44,10 @@ abstract class $UserModelCopyWith<$Res> {
   $Res call(
       {String id,
       String email,
+      String? firstName,
+      String? lastName,
+      String? patronymic,
+      DateTime? birthDate,
       String? assetUrl,
       String? workModelId,
       bool? isRecruiter});
@@ -60,6 +68,10 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
   $Res call({
     Object? id = null,
     Object? email = null,
+    Object? firstName = freezed,
+    Object? lastName = freezed,
+    Object? patronymic = freezed,
+    Object? birthDate = freezed,
     Object? assetUrl = freezed,
     Object? workModelId = freezed,
     Object? isRecruiter = freezed,
@@ -73,6 +85,22 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
+      firstName: freezed == firstName
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      lastName: freezed == lastName
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      patronymic: freezed == patronymic
+          ? _value.patronymic
+          : patronymic // ignore: cast_nullable_to_non_nullable
+              as String?,
+      birthDate: freezed == birthDate
+          ? _value.birthDate
+          : birthDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
       assetUrl: freezed == assetUrl
           ? _value.assetUrl
           : assetUrl // ignore: cast_nullable_to_non_nullable
@@ -99,6 +127,10 @@ abstract class _$$_UserModelCopyWith<$Res> implements $UserModelCopyWith<$Res> {
   $Res call(
       {String id,
       String email,
+      String? firstName,
+      String? lastName,
+      String? patronymic,
+      DateTime? birthDate,
       String? assetUrl,
       String? workModelId,
       bool? isRecruiter});
@@ -117,6 +149,10 @@ class __$$_UserModelCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? email = null,
+    Object? firstName = freezed,
+    Object? lastName = freezed,
+    Object? patronymic = freezed,
+    Object? birthDate = freezed,
     Object? assetUrl = freezed,
     Object? workModelId = freezed,
     Object? isRecruiter = freezed,
@@ -130,6 +166,22 @@ class __$$_UserModelCopyWithImpl<$Res>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
+      firstName: freezed == firstName
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      lastName: freezed == lastName
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      patronymic: freezed == patronymic
+          ? _value.patronymic
+          : patronymic // ignore: cast_nullable_to_non_nullable
+              as String?,
+      birthDate: freezed == birthDate
+          ? _value.birthDate
+          : birthDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
       assetUrl: freezed == assetUrl
           ? _value.assetUrl
           : assetUrl // ignore: cast_nullable_to_non_nullable
@@ -147,11 +199,16 @@ class __$$_UserModelCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 @JsonSerializable()
 class _$_UserModel implements _UserModel {
   const _$_UserModel(
       {required this.id,
       required this.email,
+      this.firstName,
+      this.lastName,
+      this.patronymic,
+      this.birthDate,
       this.assetUrl,
       this.workModelId,
       this.isRecruiter});
@@ -164,6 +221,14 @@ class _$_UserModel implements _UserModel {
   @override
   final String email;
   @override
+  final String? firstName;
+  @override
+  final String? lastName;
+  @override
+  final String? patronymic;
+  @override
+  final DateTime? birthDate;
+  @override
   final String? assetUrl;
   @override
   final String? workModelId;
@@ -172,7 +237,7 @@ class _$_UserModel implements _UserModel {
 
   @override
   String toString() {
-    return 'UserModel(id: $id, email: $email, assetUrl: $assetUrl, workModelId: $workModelId, isRecruiter: $isRecruiter)';
+    return 'UserModel(id: $id, email: $email, firstName: $firstName, lastName: $lastName, patronymic: $patronymic, birthDate: $birthDate, assetUrl: $assetUrl, workModelId: $workModelId, isRecruiter: $isRecruiter)';
   }
 
   @override
@@ -182,6 +247,14 @@ class _$_UserModel implements _UserModel {
             other is _$_UserModel &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.email, email) || other.email == email) &&
+            (identical(other.firstName, firstName) ||
+                other.firstName == firstName) &&
+            (identical(other.lastName, lastName) ||
+                other.lastName == lastName) &&
+            (identical(other.patronymic, patronymic) ||
+                other.patronymic == patronymic) &&
+            (identical(other.birthDate, birthDate) ||
+                other.birthDate == birthDate) &&
             (identical(other.assetUrl, assetUrl) ||
                 other.assetUrl == assetUrl) &&
             (identical(other.workModelId, workModelId) ||
@@ -192,8 +265,8 @@ class _$_UserModel implements _UserModel {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, email, assetUrl, workModelId, isRecruiter);
+  int get hashCode => Object.hash(runtimeType, id, email, firstName, lastName,
+      patronymic, birthDate, assetUrl, workModelId, isRecruiter);
 
   @JsonKey(ignore: true)
   @override
@@ -213,6 +286,10 @@ abstract class _UserModel implements UserModel {
   const factory _UserModel(
       {required final String id,
       required final String email,
+      final String? firstName,
+      final String? lastName,
+      final String? patronymic,
+      final DateTime? birthDate,
       final String? assetUrl,
       final String? workModelId,
       final bool? isRecruiter}) = _$_UserModel;
@@ -224,6 +301,14 @@ abstract class _UserModel implements UserModel {
   String get id;
   @override
   String get email;
+  @override
+  String? get firstName;
+  @override
+  String? get lastName;
+  @override
+  String? get patronymic;
+  @override
+  DateTime? get birthDate;
   @override
   String? get assetUrl;
   @override

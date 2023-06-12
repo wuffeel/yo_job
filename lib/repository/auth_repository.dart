@@ -45,12 +45,14 @@ class AuthRepository {
         idToken: googleAuth.idToken,
       );
 
+      print(credential);
+
       await _firebaseInstance.signInWithCredential(credential);
 
       print('Login Success');
       return _firebaseInstance.currentUser;
     } catch (e, s) {
-      print('Signing error');
+      print('Signing error: $e');
       return null;
     }
   }

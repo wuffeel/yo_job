@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
 import 'package:yo_job/auth/state/auth_notifier.dart';
 import 'package:yo_job/repository/auth_repository.dart';
+import 'package:yo_job/repository/user_repository.dart';
 
 class Injector extends StatefulWidget {
   final Widget child;
@@ -13,14 +14,15 @@ class Injector extends StatefulWidget {
 }
 
 class _InjectorState extends State<Injector> {
-  late final AuthNotifier _authNotifier;
+  late final UserNotifier _authNotifier;
   final AuthRepository _authRepository = AuthRepository();
+  final UserRepository _userRepository = UserRepository();
 
   @override
   void initState() {
     super.initState();
 
-    _authNotifier = AuthNotifier(_authRepository);
+    _authNotifier = UserNotifier(_authRepository, _userRepository);
   }
 
   @override

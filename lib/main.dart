@@ -28,18 +28,20 @@ class MyApp extends StatelessWidget {
         provider
             .getInitialLocale()
             .then((locale) => provider.setLocale(locale.languageCode));
-        return MaterialApp(
-          title: 'YoJob',
-          localizationsDelegates: const [
-            S.delegate,
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-          ],
-          locale: provider.locale,
-          supportedLocales: S.delegate.supportedLocales,
-          theme: ThemeData(primarySwatch: Colors.orange),
-          home: const Injector(child: SignInScreen()),
+        return Injector(
+          child: MaterialApp(
+            title: 'YoJob',
+            localizationsDelegates: const [
+              S.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
+            locale: provider.locale,
+            supportedLocales: S.delegate.supportedLocales,
+            theme: ThemeData(primarySwatch: Colors.orange),
+            home: const SignInScreen(),
+          ),
         );
       },
     );

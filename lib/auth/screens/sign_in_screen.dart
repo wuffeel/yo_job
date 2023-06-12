@@ -9,6 +9,7 @@ import 'package:yo_job/auth/widgets/credentials_field.dart';
 import 'package:yo_job/auth/widgets/logo_widget.dart';
 import 'package:yo_job/auth/widgets/sign_up_widget.dart';
 import 'package:yo_job/auth/widgets/user_type_widget.dart';
+import 'package:yo_job/vacancy/screens/cv_list_screen.dart';
 
 import '../../generated/l10n.dart';
 
@@ -31,14 +32,24 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   void initState() {
     super.initState();
-    final authNotifier = context.read<AuthNotifier>();
+    final authNotifier = context.read<UserNotifier>();
     authNotifier.addListener(() {
       if(authNotifier.currentUser != null){
-        Navigator.of(context).pushReplacement(
-          MaterialPageRoute(
-            builder: (context) => const WelcomeScreen(),
-          ),
-        );
+        if(authNotifier.currentUser!.firstName == null){
+          Navigator.of(context).pushReplacement(
+            MaterialPageRoute(
+              builder: (context) => const WelcomeScreen(),
+            ),
+          );
+        }
+        else{
+          Navigator.of(context).pushReplacement(
+            MaterialPageRoute(
+              builder: (context) => const CvListScreen(),
+            ),
+          );
+        }
+
       }
     });
   }
@@ -96,7 +107,6 @@ class _SignInScreenState extends State<SignInScreen> {
             ),
             AuthButton(
               isSignIn: true,
-              // TODO: provide database logic
               onPressed: () {
                 Navigator.of(context).pushReplacement(
                   MaterialPageRoute(
@@ -109,7 +119,7 @@ class _SignInScreenState extends State<SignInScreen> {
               height: 50,
             ),
             SignUpWidget(
-              onGooglePressed: () => context.read<AuthNotifier>().googleSignIn(),
+              onGooglePressed: () => context.read<UserNotifier>().googleSignIn(),
               onSignUpPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
